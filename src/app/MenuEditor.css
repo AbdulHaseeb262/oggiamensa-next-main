@@ -1,0 +1,35 @@
+.invalid-field {
+    border: 1px solid #ff3b30;
+    background-color: #fff0f0;
+  }
+  
+  .validation-message {
+    color: #ff3b30;
+    font-size: 0.8em;
+    margin-top: 4px;
+  }
+
+  .submenu-text {
+    font-size: 1em; 
+    color: #aaa; 
+    text-align: left;
+    margin-bottom: 10px;
+    margin-top: -10px !important;
+  }
+
+  .disabled-button {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  .disabled-button:hover {
+    background-color: inherit; 
+  }
+  
+  .submenu-text-admin {
+    font-size: 0.8em; 
+    color: #aaa; 
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 5px;
+  }

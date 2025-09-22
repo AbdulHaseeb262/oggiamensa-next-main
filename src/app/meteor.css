@@ -1,0 +1,178 @@
+@font-face {
+  font-family: 'PressStart2P';
+  src: url('/fonts/PressStart2P.woff2') format('woff2'),
+       url('/fonts/PressStart2P.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+ 
+/* Animazione fluttuante */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+ 
+.floating {
+  animation: float 1s ease-in-out infinite;
+}
+ 
+.game {
+  width: 250px;
+  height: 290px;
+  margin: auto;
+  position: relative;
+  background-image: url(/img/background.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: hidden; 
+}
+ 
+.score-container {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 10px;
+  z-index: 10;
+  font-size: 10px;
+  line-height: 1.5;
+  color: #000000;
+  text-shadow: 1px 1px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+  font-family: 'PressStart2P', cursive;
+}
+ 
+.score, .high-score {
+  margin-bottom: 5px;
+  z-index: 999;
+}
+ 
+#spaceship {
+  width: 50px;
+  height: 50px;
+  background-image: url(/img/spaceship.png);
+  background-size: contain;
+  position: relative;
+  top: 150px;
+  left: 40px;
+  z-index: 2;
+}
+ 
+.jump {
+  animation: jump 0.5s linear;
+}
+ 
+@keyframes jump {
+  0% {
+    top: 150px;
+  }
+  30% {
+    top: 130px;
+  }
+  50% {
+    top: 80px;
+  }
+  80% {
+    top: 130px;
+  }
+  100% {
+    top: 150px;
+  }
+}
+ 
+#meteor {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  top: 100px;
+  left: 230px;
+  background-size: contain;
+  animation: block 2s infinite linear;
+  z-index: 1;
+}
+ 
+.meteor-image-1 {
+  background-image: url("/img/meteor1.png");
+}
+ 
+.meteor-image-2 {
+  background-image: url("/img/meteor2.png");
+}
+ 
+.meteor-image-3 {
+  background-image: url("/img/meteor3.png");
+}
+ 
+.meteor-image-4 {
+  background-image: url("/img/meteor4.png");
+}
+ 
+@keyframes block {
+  0% {
+    left: 580px;
+  }
+  100% {
+    left: -5px;
+  }
+}
+
+.game-over-overlay {
+  position: absolute; 
+  top: 70px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 76%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, rgba(175, 103, 249, 0.67), rgba(244, 150, 102, 0.67));
+  z-index: 999; 
+  pointer-events: auto; 
+  border-radius: 12px !important;
+}
+
+.restart-icon {
+  width: 50px;
+  height: 50px;
+  background-image: url(/img/restart.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  animation: pulse 1.5s infinite ease-in-out;
+  position: relative; 
+  z-index: 1000;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.4);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.game-over {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 60px;
+  z-index: 10;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #000000;
+  text-shadow: 1px 1px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+  font-family: 'PressStart2P', cursive;
+}
